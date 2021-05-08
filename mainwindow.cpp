@@ -24,8 +24,8 @@ MainWindow::MainWindow(QWidget *parent)
     m_model->setHorizontalHeaderItem(1, new QStandardItem("ssid"));
     m_model->setHorizontalHeaderItem(2, new QStandardItem("signal"));
     m_model->setHorizontalHeaderItem(3, new QStandardItem("security"));
-    m_model->setHorizontalHeaderItem(4, new QStandardItem("min_freq"));
-    m_model->setHorizontalHeaderItem(5, new QStandardItem("max_freq"));
+    m_model->setHorizontalHeaderItem(4, new QStandardItem("max_freq"));
+    m_model->setHorizontalHeaderItem(5, new QStandardItem("min_freq"));
     m_model->setHorizontalHeaderItem(6, new QStandardItem("category"));
 }
 
