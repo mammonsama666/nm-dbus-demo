@@ -1,0 +1,1 @@
+这是一个调用kylin-nm提供的dbus接口的客户端demo，用户获取kylin-nm提供的网络列表
