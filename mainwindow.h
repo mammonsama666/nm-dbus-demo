@@ -28,5 +28,6 @@ private:
 
 private slots:
     void getWifiListDone();
+    void onConfigurationChanged();
 };
 #endif // MAINWINDOW_H

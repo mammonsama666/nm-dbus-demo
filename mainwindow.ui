@@ -50,6 +50,19 @@
      </rect>
     </property>
    </widget>
+   <widget class="QLabel" name="tipLabel_2">
+    <property name="geometry">
+     <rect>
+      <x>460</x>
+      <y>50</y>
+      <width>311</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>ConfigurationChanged!</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
@@ -57,7 +70,7 @@
      <x>0</x>
      <y>0</y>
      <width>800</width>
-     <height>36</height>
+     <height>23</height>
     </rect>
    </property>
   </widget>

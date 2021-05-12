@@ -20,6 +20,7 @@ MainWindow::MainWindow(QWidget *parent)
 
     this->m_model = new QStandardItemModel;
     ui->wifiList->setModel(m_model);
+    ui->tipLabel_2->hide();
     m_model->setHorizontalHeaderItem(0, new QStandardItem("in-use"));
     m_model->setHorizontalHeaderItem(1, new QStandardItem("ssid"));
     m_model->setHorizontalHeaderItem(2, new QStandardItem("signal"));
@@ -37,6 +38,7 @@ MainWindow::~MainWindow()
 void MainWindow::initConnection()
 {
     connect(m_interface, SIGNAL(getWifiListFinished()), this, SLOT(getWifiListDone()));
+    connect(m_interface, SIGNAL(configurationChanged()), this, SLOT(onConfigurationChanged()));
 
     connect(ui->refreshBtn, &QPushButton::clicked, this, [ = ]() {
         ui->refreshBtn->setEnabled(false);
@@ -63,6 +65,14 @@ void MainWindow::getWifiListDone()
     } else {
         qWarning() << "value method called failed!";
     }
+}
+
+void MainWindow::onConfigurationChanged()
+{
+    ui->tipLabel_2->show();
+    QTimer::singleShot(2 * 1000, this, [ = ]() {
+        ui->tipLabel_2->hide();
+    });
 }
 
 void MainWindow::setWifiList(const QVector<QStringList> &list)
